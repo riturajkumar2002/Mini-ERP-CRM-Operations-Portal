@@ -90,8 +90,10 @@ app.use('/api/challans', challanRoutes);
 app.use(errorHandler);
 
 const portNumber = Number(PORT);
-app.listen(portNumber, '0.0.0.0', () => {
-  console.log(`🚀 Mini ERP + CRM Server running on port ${portNumber}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(portNumber, '0.0.0.0', () => {
+    console.log(`🚀 Rituraj ERP + CRM Server running on port ${portNumber}`);
+  });
+}
 
 export default app;
