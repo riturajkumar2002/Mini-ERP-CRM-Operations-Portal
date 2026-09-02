@@ -1,0 +1,314 @@
+{
+  "info": {
+    "name": "Rituraj Operations Portal API",
+    "description": "Postman API Collection for Wholesale/Distribution Rituraj ERP + CRM Operations Portal.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "TOKEN",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@rituraj.com\",\n  \"password\": \"Password@123\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/auth/login",
+              "host": ["{{BASE_URL}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Login (Sales)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"sales@rituraj.com\",\n  \"password\": \"Password@123\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/auth/login",
+              "host": ["{{BASE_URL}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Get Current User Me",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/auth/me",
+              "host": ["{{BASE_URL}}"],
+              "path": ["auth", "me"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customer CRM",
+      "item": [
+        {
+          "name": "List Customers (Search & Paginate)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/customers?page=1&limit=10&search=",
+              "host": ["{{BASE_URL}}"],
+              "path": ["customers"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "10" },
+                { "key": "search", "value": "" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Customer (WHOLESALE / RETAIL / DISTRIBUTOR)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Vikram Shah\",\n  \"mobile\": \"+919822012345\",\n  \"email\": \"vikram@shahind.com\",\n  \"businessName\": \"Shah Industries Ltd\",\n  \"gstNumber\": \"27CCCCCC2222C3Z7\",\n  \"customerType\": \"WHOLESALE\",\n  \"address\": \"78 Industrial Estate, Mumbai, MH\",\n  \"status\": \"ACTIVE\",\n  \"notes\": \"Key account for heavy machinery\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/customers",
+              "host": ["{{BASE_URL}}"],
+              "path": ["customers"]
+            }
+          }
+        },
+        {
+          "name": "Get Customer by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/customers/1",
+              "host": ["{{BASE_URL}}"],
+              "path": ["customers", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Customer (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Rajesh Kumar Updated\",\n  \"customerType\": \"DISTRIBUTOR\",\n  \"notes\": \"Updated discount structure agreed for Q3\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/customers/1",
+              "host": ["{{BASE_URL}}"],
+              "path": ["customers", "1"]
+            }
+          }
+        },
+        {
+          "name": "Add Follow-Up Note",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"note\": \"Demonstrated pump specs; client requested sample challan.\",\n  \"followUpDate\": \"2026-08-20\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/customers/1/follow-ups",
+              "host": ["{{BASE_URL}}"],
+              "path": ["customers", "1", "follow-ups"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products & Inventory",
+      "item": [
+        {
+          "name": "List Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/products",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products"]
+            }
+          }
+        },
+        {
+          "name": "List Low Stock Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/products?lowStock=true",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products"],
+              "query": [
+                { "key": "lowStock", "value": "true" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Stock IN Movement",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": 10,\n  \"type\": \"IN\",\n  \"reason\": \"Supplier restock delivery\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/products/1/stock",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "1", "stock"]
+            }
+          }
+        },
+        {
+          "name": "Excessive Stock OUT Movement (Should Fail 400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": 99999,\n  \"type\": \"OUT\",\n  \"reason\": \"Test excessive stock out\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/products/1/stock",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "1", "stock"]
+            }
+          }
+        },
+        {
+          "name": "Stock Audit History",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/products/stock/history",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "stock", "history"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sales Challans",
+      "item": [
+        {
+          "name": "Create Draft Challan",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": 1,\n  \"items\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 2\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/challans",
+              "host": ["{{BASE_URL}}"],
+              "path": ["challans"]
+            }
+          }
+        },
+        {
+          "name": "Confirm Challan (Atomic Transaction)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{TOKEN}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"CONFIRMED\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/challans/1/status",
+              "host": ["{{BASE_URL}}"],
+              "path": ["challans", "1", "status"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
