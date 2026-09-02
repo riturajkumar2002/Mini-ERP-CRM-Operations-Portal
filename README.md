@@ -339,3 +339,10 @@ Run the following manual test flows:
 
 1. **Storage**: JWT tokens are stored in `localStorage` for simplified local setup.
 2. **Database Driver**: Configured for PostgreSQL database compatibility.
+
+---
+
+## 👨‍💻 Author & Maintenance
+
+Developed and maintained by **[Rituraj Kumar](https://github.com/riturajkumar2002)**.
+
