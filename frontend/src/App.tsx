@@ -53,7 +53,7 @@ const ProtectedLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
     if (path.startsWith('/challans/new')) return 'Create Delivery Challan';
     if (path.startsWith('/challans/')) return 'Challan Inspection';
     if (path.startsWith('/challans')) return 'Sales Challans';
-    return 'NexusFlow ERP';
+    return 'Rituraj ERP';
   };
 
   return (

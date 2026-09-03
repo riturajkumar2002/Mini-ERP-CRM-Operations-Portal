@@ -119,9 +119,9 @@ export const Login: React.FC = () => {
 
           {/* Top Brand Header */}
           <div className="login-branding-header">
-            <div className="login-brand-logo">N</div>
+            <div className="login-brand-logo">R</div>
             <div>
-              <div className="login-brand-name">NexusFlow ERP</div>
+              <div className="login-brand-name">Rituraj ERP</div>
               <div className="login-brand-sub">Operations Portal</div>
             </div>
           </div>
@@ -175,7 +175,7 @@ export const Login: React.FC = () => {
 
           {/* Left Footer Note */}
           <div style={{ fontSize: '0.78rem', color: '#64748b', zIndex: 2 }}>
-            NexusFlow Operations Portal • Enterprise System
+            Rituraj Operations Portal • Enterprise System
           </div>
         </div>
 
@@ -339,7 +339,7 @@ export const Login: React.FC = () => {
 
           {/* Footer */}
           <div className="login-footer">
-            <span>© 2026 NexusFlow ERP • Operations Portal</span>
+            <span>© 2026 Rituraj ERP • Operations Portal</span>
             <span>Secure role-based access</span>
           </div>
         </div>

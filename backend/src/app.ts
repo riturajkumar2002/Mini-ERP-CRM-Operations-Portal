@@ -42,7 +42,7 @@ app.use(express.json());
 
 // Health Check
 app.get('/api/health', (_req: Request, res: Response) => {
-  res.status(200).json({ success: true, message: 'NexusFlow ERP + CRM API Server Running' });
+  res.status(200).json({ success: true, message: 'Rituraj ERP + CRM API Server Running' });
 });
 
 // Dashboard Analytics Endpoint
@@ -93,7 +93,7 @@ app.use(errorHandler);
 const portNumber = Number(PORT);
 if (!process.env.VERCEL) {
   app.listen(portNumber, '0.0.0.0', () => {
-    console.log(`🚀 NexusFlow ERP + CRM Server running on port ${portNumber}`);
+    console.log(`🚀 Rituraj ERP + CRM Server running on port ${portNumber}`);
   });
 }
 

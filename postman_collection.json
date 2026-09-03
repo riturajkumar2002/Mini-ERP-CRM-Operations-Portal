@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "NexusFlow Operations Portal API",
-    "description": "Postman API Collection for Wholesale/Distribution NexusFlow ERP + CRM Operations Portal.",
+    "name": "Rituraj Operations Portal API",
+    "description": "Postman API Collection for Wholesale/Distribution Rituraj ERP + CRM Operations Portal.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
