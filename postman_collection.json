@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "Rituraj Operations Portal API",
-    "description": "Postman API Collection for Wholesale/Distribution Rituraj ERP + CRM Operations Portal.",
+    "name": "NexusFlow Operations Portal API",
+    "description": "Postman API Collection for Wholesale/Distribution NexusFlow ERP + CRM Operations Portal.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -149,7 +149,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"Rajesh Kumar Updated\",\n  \"customerType\": \"DISTRIBUTOR\",\n  \"notes\": \"Updated discount structure agreed for Q3\"\n}"
+              "raw": "{\n  \"name\": \"Vikramaditya Singhania Updated\",\n  \"customerType\": \"DISTRIBUTOR\",\n  \"notes\": \"Updated discount structure agreed for Q3\"\n}"
             },
             "url": {
               "raw": "{{BASE_URL}}/customers/1",

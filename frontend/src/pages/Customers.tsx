@@ -356,7 +356,7 @@ export const Customers: React.FC = () => {
                 type="text"
                 required
                 className="form-control"
-                placeholder="Rajesh Kumar"
+                placeholder="Vikramaditya Singhania"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
@@ -368,7 +368,7 @@ export const Customers: React.FC = () => {
                 type="text"
                 required
                 className="form-control"
-                placeholder="Apex Industrial Corp"
+                placeholder="Zenith Dynamics & Solutions"
                 value={formData.businessName}
                 onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
               />
@@ -382,7 +382,7 @@ export const Customers: React.FC = () => {
                 type="text"
                 required
                 className="form-control"
-                placeholder="+91 98765 43210"
+                placeholder="+91 98201 54321"
                 value={formData.mobile}
                 onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
               />
@@ -394,7 +394,7 @@ export const Customers: React.FC = () => {
                 type="email"
                 required
                 className="form-control"
-                placeholder="rajesh@apexind.com"
+                placeholder="vikram@zenithdynamics.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />

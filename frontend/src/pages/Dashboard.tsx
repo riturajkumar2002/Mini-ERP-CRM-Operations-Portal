@@ -93,7 +93,7 @@ export const Dashboard: React.FC = () => {
       {/* KPI Stat Cards */}
       <div className="grid-stats">
         <div className="stat-card">
-          <div className="stat-icon" style={{ background: 'rgba(99, 102, 241, 0.12)', color: 'var(--primary)' }}>
+          <div className="stat-icon" style={{ background: 'var(--primary-light)', color: 'var(--primary)' }}>
             <Users size={22} />
           </div>
           <div>

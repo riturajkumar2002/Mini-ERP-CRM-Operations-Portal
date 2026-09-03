@@ -22,9 +22,9 @@ export const Sidebar: React.FC = () => {
     <aside className="sidebar">
       {/* Brand Header */}
       <div className="sidebar-brand">
-        <div className="brand-icon">R</div>
+        <div className="brand-icon">N</div>
         <div>
-          <div className="brand-title">Rituraj ERP</div>
+          <div className="brand-title">NexusFlow ERP</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Operations Portal</div>
         </div>
       </div>

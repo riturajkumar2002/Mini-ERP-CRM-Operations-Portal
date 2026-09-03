@@ -119,9 +119,9 @@ export const Login: React.FC = () => {
 
           {/* Top Brand Header */}
           <div className="login-branding-header">
-            <div className="login-brand-logo">R</div>
+            <div className="login-brand-logo">N</div>
             <div>
-              <div className="login-brand-name">Rituraj ERP</div>
+              <div className="login-brand-name">NexusFlow ERP</div>
               <div className="login-brand-sub">Operations Portal</div>
             </div>
           </div>
@@ -155,12 +155,12 @@ export const Login: React.FC = () => {
             {/* Abstract Graphic ERP Preview Card */}
             <div className="login-abstract-widget">
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(99, 102, 241, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#818cf8' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(37, 99, 235, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#60a5fa' }}>
                   <TrendingUp size={20} />
                 </div>
                 <div>
                   <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'white' }}>Live System Status</div>
-                  <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>PostgreSQL Transactions Active</div>
+                  <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>Operational Transactions Active</div>
                 </div>
               </div>
 
@@ -175,7 +175,7 @@ export const Login: React.FC = () => {
 
           {/* Left Footer Note */}
           <div style={{ fontSize: '0.78rem', color: '#64748b', zIndex: 2 }}>
-            Rituraj Operations Portal • Enterprise System
+            NexusFlow Operations Portal • Enterprise System
           </div>
         </div>
 
@@ -339,7 +339,7 @@ export const Login: React.FC = () => {
 
           {/* Footer */}
           <div className="login-footer">
-            <span>© 2026 Rituraj ERP • Operations Portal</span>
+            <span>© 2026 NexusFlow ERP • Operations Portal</span>
             <span>Secure role-based access</span>
           </div>
         </div>

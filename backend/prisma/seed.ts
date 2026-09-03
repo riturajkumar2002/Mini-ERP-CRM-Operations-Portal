@@ -120,27 +120,27 @@ async function main() {
 
   // 3. Seed Customers (Idempotent check by email)
   let c1 = await prisma.customer.findFirst({
-    where: { email: 'rajesh@apexind.com' },
+    where: { email: 'vikram@zenithdynamics.com' },
   });
 
   if (!c1) {
     c1 = await prisma.customer.create({
       data: {
-        name: 'Rajesh Kumar',
-        mobile: '+919876543210',
-        email: 'rajesh@apexind.com',
-        businessName: 'Apex Industrial Solutions',
-        gstNumber: '27AAAAA0000A1Z5',
+        name: 'Vikramaditya Singhania',
+        mobile: '+919820154321',
+        email: 'vikram@zenithdynamics.com',
+        businessName: 'Zenith Dynamics & Solutions',
+        gstNumber: '27AACCA1234E1Z9',
         customerType: CustomerType.WHOLESALE,
-        address: 'Plot 42, MIDC Industrial Area, Pune, MH',
+        address: 'Plot 54, Hinjewadi Phase 1, Pune, MH',
         status: CustomerStatus.ACTIVE,
         followUpDate: new Date(Date.now() + 86400000 * 3),
-        notes: 'Interested in bulk pump orders for Q3',
+        notes: 'Interested in bulk pump orders and yearly maintenance contract for Q3',
         createdById: sales.id,
         followUps: {
           create: [
             {
-              note: 'Initial phone call - sent catalog',
+              note: 'Initial executive meeting - dispatched industrial technical catalog',
               followUpDate: new Date(Date.now() - 86400000 * 2),
               createdById: sales.id,
             },
@@ -152,27 +152,29 @@ async function main() {
     c1 = await prisma.customer.update({
       where: { id: c1.id },
       data: {
+        name: 'Vikramaditya Singhania',
+        businessName: 'Zenith Dynamics & Solutions',
         customerType: CustomerType.WHOLESALE,
       },
     });
   }
 
   let c2 = await prisma.customer.findFirst({
-    where: { email: 'suresh@techtraders.in' },
+    where: { email: 'ananya@novatrade.in' },
   });
 
   if (!c2) {
     c2 = await prisma.customer.create({
       data: {
-        name: 'Suresh Patel',
-        mobile: '+919812345678',
-        email: 'suresh@techtraders.in',
-        businessName: 'Tech Traders Corp',
-        gstNumber: '24BBBBB1111B2Z6',
+        name: 'Ananya Deshmukh',
+        mobile: '+919833287654',
+        email: 'ananya@novatrade.in',
+        businessName: 'Nova Trade & Supply Chain',
+        gstNumber: '24AABBN5678M2Z1',
         customerType: CustomerType.DISTRIBUTOR,
-        address: '101 Corporate Park, Ahmedabad, GJ',
+        address: 'Tower B, Commercial Hub, Surat, GJ',
         status: CustomerStatus.LEAD,
-        notes: 'Requested price quotes for stainless valves',
+        notes: 'Requested distributor price quotes for stainless control valves',
         createdById: sales.id,
       },
     });
@@ -180,7 +182,30 @@ async function main() {
     c2 = await prisma.customer.update({
       where: { id: c2.id },
       data: {
+        name: 'Ananya Deshmukh',
+        businessName: 'Nova Trade & Supply Chain',
         customerType: CustomerType.DISTRIBUTOR,
+      },
+    });
+  }
+
+  let c3 = await prisma.customer.findFirst({
+    where: { email: 'rohan@auraprecision.com' },
+  });
+
+  if (!c3) {
+    await prisma.customer.create({
+      data: {
+        name: 'Rohan Banerjee',
+        mobile: '+919811233445',
+        email: 'rohan@auraprecision.com',
+        businessName: 'Aura Precision Engineering',
+        gstNumber: '29AAACP9988K1Z3',
+        customerType: CustomerType.RETAIL,
+        address: 'Sector 62, Electronic City, Bengaluru, KA',
+        status: CustomerStatus.ACTIVE,
+        notes: 'Regular retail order for precision planetary gearboxes',
+        createdById: sales.id,
       },
     });
   }
